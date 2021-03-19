@@ -103,8 +103,8 @@ const reviewSource = new carto.source.Dataset('reviews');
 const reviewStyle = new carto.style.CartoCSS(`
 #layer {
     marker-width: 11;
-    marker-fill: #FFF;
-    marker-line-color: blue; 
+    marker-fill: #00FF00;
+    marker-line-color: black; 
 }
 `);
 const reviewLayer = new carto.layer.Layer(reviewSource, reviewStyle, {
@@ -174,10 +174,12 @@ $('#submit').click(function(){
     var issue = $('#issues').val();
 
     if(lat == null && lon == null){
-        lat = $('#location').val()
-        lon = $('#location').val()
-    }
+        lat_lon = $('#location').val()
 
+        lat = lat_lon.split(",")[1].trim();
+        lon = lat_lon.split(",")[0].trim()
+    }
+    
     id++;
 
    if(!isNaN(rating) && rating !=null){
