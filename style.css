@@ -9,9 +9,9 @@
 }
 
 .blue {
-    background-color: #211750;
+    background-color: #55211b;
     color: white;
-    /* box-shadow: inset 0px 0px 10px 0px #0b141c; */
+    border: 2px solid black;
 }
 
 #sidebar{
@@ -210,16 +210,4 @@ input[type=text]{
     width: 250px;
     max-height: 350px;
     overflow-y: scroll;
-}
-@media screen and (max-width:600px){
-    .collapse{
-        border: 2px solid #ccc;
-        background-color: white;
-        border-radius: 5px;
-        padding: 5px;
-        color: #000000;
-        font-family: "Open Sans";
-        font-size: 16px;
-        width: 100%;
-    }  
 }

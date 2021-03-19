@@ -75,8 +75,8 @@ const historicSource = new carto.source.Dataset('historicplaces_devilslake');
 const historicStyle = new carto.style.CartoCSS(`
 #layer {
     marker-width: 11;
-    marker-fill: #1785FB;
-    marker-line-color: #FFFFFF; 
+    marker-fill: #00FF00;
+    marker-line-color: black; 
 }
 `);
 const historicLayer = new carto.layer.Layer(historicSource, historicStyle, {
@@ -103,7 +103,7 @@ const reviewSource = new carto.source.Dataset('reviews');
 const reviewStyle = new carto.style.CartoCSS(`
 #layer {
     marker-width: 11;
-    marker-fill: #00FF00;
+    marker-fill: #9932CC;
     marker-line-color: black; 
 }
 `);
