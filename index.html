@@ -109,6 +109,15 @@
                         <option selected value="">Select a ski trail</option>
                       </select>
                     </div>
+                    <div id="info-text">Hiking Trail Filters: <input type="button" value="Clear filters" id="clear"></div>
+                    <div id="filterbox">
+                      <select id="lengthDrop">
+                              <option selected="length">Filter by length</option>
+                      </select>
+                      <select id="difficultyDrop">
+                              <option selected="difficulty">Filter by difficulty</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
             </div>
@@ -143,6 +152,18 @@
                         Ski Trails
                       </label>
                     </div>
+                    <div class="form-check checkbox-rounded">
+                      <input type="checkbox" value="" class="historic_check" id="historic_check" checked="checked">
+                      <label class="form-check-label" for="historic_check">
+                        Historical Places
+                      </label>
+                    </div>
+                    <div class="form-check checkbox-rounded">
+                      <input type="checkbox" value="" class="review_check" id="review_check" checked="checked">
+                      <label class="form-check-label" for="review_check">
+                        Reviews
+                      </label>
+                    </div>
                   </div>
                 </div>
             </div>
@@ -160,6 +181,8 @@
                   <div id="legend-text">Legend:</div>
                   <div id="legend">
                     <div id="thmb">
+                      <img id="thumbnails" height="35px" width="35px" src="img/boundary.PNG">Park Boundary</br>
+                      <img id="thumbnails" height="35px" width="35px" src="img/review.PNG">Reviews</br>
                       <img id="thumbnails" height="35px" width="35px" src="img/historical.PNG">Historical Places</br>
                       <img id="thumbnails" height="35px" width="35px" src="img/hike.PNG">Hiking Trails</br>
                       <img id="thumbnails" height="35px" width="35px" src="img/mnt.PNG">Mountain Bike Trails</br>
@@ -185,12 +208,20 @@
                       <label for="comments">Comments:</label><br>
                       <input type="text" id="comments" name="comments"><br>
                       <label for="rating">Rate your experience (1-5):</label><br>
-                      <input type="text" id="rating" name="rating">
+                      <select id="rating">
+                        <option selected value="">Rating</option>
+                        <option selected value="1">1</option>
+                        <option selected value="2">2</option>
+                        <option selected value="3">3</option>
+                        <option selected value="4">4</option>
+                        <option selected value="5">5</option>
+                      </select> </br>
+                      <!-- <input type="text" id="rating" name="rating"> -->
                       <label for="issues">Report an issue:</label><br>
                       <input type="text" id="issues" name="issues">
                       <label for="location">Location:<br></label><br>
                       <input type="button" value="Use Current Location" id="loc">
-                      <!-- <input type="button" value="Use Map" id="map-finder"> -->
+                      <input type="button" value="Use Map" id="map-finder">
                       <input type="text" id="location" name="location">
                       <input type="button" value="Submit" id="submit">
                     </form>

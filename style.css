@@ -62,6 +62,18 @@
     padding: 10px;
     margin-bottom: 5px;
 }
+#lengthDrop {
+    background-color: #d2eaef;
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+#difficultyDrop {
+    background-color: #d2eaef;
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 5px;
+}
 #layer-toggle{
     margin-bottom: 10px;
 }
@@ -75,9 +87,15 @@
     padding: 15px;
     margin: auto;
     color: black;
-    height: 200px;
+    height: 260px;
     border-radius: 10px;
     text-align:left;
+}
+#rating{
+    background-color: #d2eaef;
+    width: 50%;
+    padding: 10px;
+    margin: 10px;
 }
 #legend-text{
     padding: 10px;
