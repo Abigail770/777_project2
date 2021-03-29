@@ -149,7 +149,11 @@ h4{
 input[type=text]{
     margin: 10px;
     background-color: hsl(120, 30%, 75%);
-} 
+}
+input[type=date]{
+    margin: 10px;
+    background-color: hsl(120, 30%, 75%);
+}  
 #park-info{
     border: 2px solid #ccc;
     background-color: white;

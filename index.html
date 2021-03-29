@@ -87,6 +87,82 @@
         </div>
     </div>
 
+    <!-- Legend -->
+    
+    <!-- Park info -->
+    <button id="leg" type="button" class="btn btn-primary" data-toggle="collapse" data-target="#card-collapse" aria-expanded="false" aria-controls="#card-collapse"><i class="fab fa-elementor"></i></button>
+    <div class="row">
+        <div class="col">
+            <div class="collapse" id="card-collapse">
+                <div id="card">
+                  <h4>Legend:</h4>
+                  <div id="legend">
+                    <div id="thmb">
+                      <img id="thumbnails" height="35px" width="35px" src="img/boundary.PNG">Park Boundary</br>
+                      <img id="thumbnails" height="35px" width="35px" src="img/review.PNG">Reviews</br>
+                      <img id="thumbnails" height="35px" width="35px" src="img/historical.PNG">Historical Places</br>
+                      <img id="thumbnails" height="35px" width="35px" src="img/poi.PNG">Points of Interest</br>
+                      <img id="thumbnails" height="35px" width="35px" src="img/hike.PNG">Hiking Trails</br>
+                      <img id="thumbnails" height="35px" width="35px" src="img/mnt.PNG">Mountain Bike Trails</br>
+                      <img id="thumbnails" height="35px" width="35px" src="img/ski.PNG">Ski Trails
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Layer toggle -->
+
+    <button id="toggle-button" type="button" class="btn btn-primary" data-toggle="collapse" data-target="#toggle-collapse" aria-expanded="false" aria-controls="#toggle-collapse"><i class="fas fa-layer-group"></i></button>
+    <div class="row">
+        <div class="col">
+            <div class="collapse" id="toggle-collapse">
+                <div id="card">
+                  <h4>Layers:</h4>
+                  <div id="layer-toggle">
+                    <div class="form-check checkbox-rounded">
+                      <input type="checkbox" value="" class="hiking_check" id="hiking_check" checked="checked">
+                      <label class="form-check-label" for="hiking_check">
+                        Hiking Trails
+                      </label>
+                    </div>
+                    <div class="form-check checkbox-rounded">
+                      <input type="checkbox" value="" class="mtn_check" id="mtn_check" checked="checked">
+                      <label class="form-check-label" for="mtn_check">
+                        Mountain Bike Trails
+                      </label>
+                    </div>
+                    <div class="form-check checkbox-rounded">
+                      <input type="checkbox" value="" class="ski_check" id="ski_check" checked="checked">
+                      <label class="form-check-label" for="ski_check">
+                        Ski Trails
+                      </label>
+                    </div>
+                    <div class="form-check checkbox-rounded">
+                      <input type="checkbox" value="" class="historic_check" id="historic_check" checked="checked">
+                      <label class="form-check-label" for="historic_check">
+                        Historical Places
+                      </label>
+                    </div>
+                    <div class="form-check checkbox-rounded">
+                      <input type="checkbox" value="" class="review_check" id="review_check" checked="checked">
+                      <label class="form-check-label" for="review_check">
+                        Reviews
+                      </label>
+                    </div>
+                    <div class="form-check checkbox-rounded">
+                      <input type="checkbox" value="" class="poi_check" id="poi_check" checked="checked">
+                      <label class="form-check-label" for="poi_check">
+                        Points of Interest
+                      </label>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Search -->
     <button id="search-button" type="button" class="btn btn-primary" data-toggle="collapse" data-target="#search-collapse" aria-expanded="false" aria-controls="#search-collapse"><i class="fas fa-search"></i></button>
     <div class="row">
@@ -162,83 +238,6 @@
         </div>
     </div>
 
-
-    <!-- Layer toggle -->
-
-    <button id="toggle-button" type="button" class="btn btn-primary" data-toggle="collapse" data-target="#toggle-collapse" aria-expanded="false" aria-controls="#toggle-collapse"><i class="fas fa-layer-group"></i></button>
-    <div class="row">
-        <div class="col">
-            <div class="collapse" id="toggle-collapse">
-                <div id="card">
-                  <h4>Layers:</h4>
-                  <div id="layer-toggle">
-                    <div class="form-check checkbox-rounded">
-                      <input type="checkbox" value="" class="hiking_check" id="hiking_check" checked="checked">
-                      <label class="form-check-label" for="hiking_check">
-                        Hiking Trails
-                      </label>
-                    </div>
-                    <div class="form-check checkbox-rounded">
-                      <input type="checkbox" value="" class="mtn_check" id="mtn_check" checked="checked">
-                      <label class="form-check-label" for="mtn_check">
-                        Mountain Bike Trails
-                      </label>
-                    </div>
-                    <div class="form-check checkbox-rounded">
-                      <input type="checkbox" value="" class="ski_check" id="ski_check" checked="checked">
-                      <label class="form-check-label" for="ski_check">
-                        Ski Trails
-                      </label>
-                    </div>
-                    <div class="form-check checkbox-rounded">
-                      <input type="checkbox" value="" class="historic_check" id="historic_check" checked="checked">
-                      <label class="form-check-label" for="historic_check">
-                        Historical Places
-                      </label>
-                    </div>
-                    <div class="form-check checkbox-rounded">
-                      <input type="checkbox" value="" class="review_check" id="review_check" checked="checked">
-                      <label class="form-check-label" for="review_check">
-                        Reviews
-                      </label>
-                    </div>
-                    <div class="form-check checkbox-rounded">
-                      <input type="checkbox" value="" class="poi_check" id="poi_check" checked="checked">
-                      <label class="form-check-label" for="poi_check">
-                        Points of Interest
-                      </label>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Legend -->
-    
-    <!-- Park info -->
-    <button id="leg" type="button" class="btn btn-primary" data-toggle="collapse" data-target="#card-collapse" aria-expanded="false" aria-controls="#card-collapse"><i class="fab fa-elementor"></i></button>
-    <div class="row">
-        <div class="col">
-            <div class="collapse" id="card-collapse">
-                <div id="card">
-                  <h4>Legend:</h4>
-                  <div id="legend">
-                    <div id="thmb">
-                      <img id="thumbnails" height="35px" width="35px" src="img/boundary.PNG">Park Boundary</br>
-                      <img id="thumbnails" height="35px" width="35px" src="img/review.PNG">Reviews</br>
-                      <img id="thumbnails" height="35px" width="35px" src="img/historical.PNG">Historical Places</br>
-                      <img id="thumbnails" height="35px" width="35px" src="img/poi.PNG">Points of Interest</br>
-                      <img id="thumbnails" height="35px" width="35px" src="img/hike.PNG">Hiking Trails</br>
-                      <img id="thumbnails" height="35px" width="35px" src="img/mnt.PNG">Mountain Bike Trails</br>
-                      <img id="thumbnails" height="35px" width="35px" src="img/ski.PNG">Ski Trails
-                    </div>
-                  </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
   <!-- Submit a review -->
 
   <button id="review" type="button" class="btn btn-primary" data-toggle="collapse" data-target="#review-collapse" aria-expanded="false" aria-controls="#review-collapse"><i class="fas fa-edit"></i></button>
@@ -249,11 +248,12 @@
                   <div id="form-tab">
                     <form>
                       <h4>Leave a Review:</h4>
-                      <label for="date">Date:</label><br>
+                      <p>(*Required fields)<p>
+                      <label for="date"><strong>Date of Visit*:</strong></label><br>
                       <input type="date" id="date" name="date"><br>
-                      <label for="comments">Comments:</label><br>
+                      <label for="comments"><strong>Comments*:</strong></label><br>
                       <input type="text" id="comments" name="comments"><br>
-                      <label for="rating">Rate your experience (1-5):</label><br>
+                      <label for="rating"><strong>Rate your experience*:</strong><br>(1 = worst, 5 = best)</label><br>
                       <select id="rating">
                         <option selected value="">Rating</option>
                         <option selected value="1">1</option>
@@ -263,9 +263,9 @@
                         <option selected value="5">5</option>
                       </select> </br>
                       <!-- <input type="text" id="rating" name="rating"> -->
-                      <label for="issues">Report an issue:</label><br>
+                      <label for="issues"><strong>Report an issue:</strong></label><br>
                       <input type="text" id="issues" name="issues">
-                      <label for="location">Location:<br></label><br>
+                      <label for="location"><strong>Location*:</strong><br></label><br>
                       <input type="button" class="button" value="Use Current Location" id="loc">
                       <input type="button" class="button" value="Use Map" id="map-finder">
                       <input type="text" id="location" name="location">
