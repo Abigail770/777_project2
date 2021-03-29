@@ -94,7 +94,7 @@
             <div class="collapse" id="search-collapse">
                 <div id="card">
                   <div id="search-tab">
-                    <div id="info-text">Search for map features:</div>
+                    <h4>Search for map features:</h4>
                     <div id="searchbox">
                       <select id="selectHistoricalDrop">
                               <option selected value="">Select a historical feature</option>
@@ -108,8 +108,25 @@
                       <select id="selectSkiDrop">
                         <option selected value="">Select a ski trail</option>
                       </select>
+                      <select id="selectPoiDrop">
+                        <option selected value="">Select a point of interest</option>
+                      </select>
                     </div>
-                    <div id="info-text">Hiking Trail Filters: <input type="button" value="Clear filters" id="clear"></div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filters -->
+    <button id="filter-button" type="button" class="btn btn-primary" data-toggle="collapse" data-target="#filter-collapse" aria-expanded="false" aria-controls="#filter-collapse"><i class="fas fa-filter"></i></button>
+    <div class="row">
+        <div class="col">
+            <div class="collapse" id="filter-collapse">
+                <div id="card">
+                  <div id="filter-tab">
+                    <h4>Filters:</h4>
+                    <div id="info-text">Hiking Trail Filters:</div>
                     <div id="filterbox">
                       <select id="lengthDrop">
                               <option selected="length">Filter by length</option>
@@ -117,6 +134,27 @@
                       <select id="difficultyDrop">
                               <option selected="difficulty">Filter by difficulty</option>
                       </select>
+                      <input type="button" class="button" value="Clear hiking filters" id="hiking-clear">
+                    </div>
+                    <div id="info-text">Bike Trail Filters:</div>
+                    <div id="bikefilterbox">
+                      <select id="bikeLengthDrop">
+                              <option selected="length">Filter by length</option>
+                      </select>
+                      <select id="bikeDifficultyDrop">
+                              <option selected="difficulty">Filter by difficulty</option>
+                      </select>
+                      <input type="button" class="button" value="Clear biking filters" id="biking-clear">
+                    </div>
+                    <div id="info-text">Ski Trail Filters:</div>
+                    <div id="skifilterbox">
+                      <select id="skiLengthDrop">
+                              <option selected="length">Filter by length</option>
+                      </select>
+                      <select id="skiDifficultyDrop">
+                              <option selected="difficulty">Filter by difficulty</option>
+                      </select>
+                      <input class="button" type="button" value="Clear skiing filters" id="skiing-clear">
                     </div>
                   </div>
                 </div>
@@ -132,7 +170,7 @@
         <div class="col">
             <div class="collapse" id="toggle-collapse">
                 <div id="card">
-                  <div id="toggle-text">Layers:</div>
+                  <h4>Layers:</h4>
                   <div id="layer-toggle">
                     <div class="form-check checkbox-rounded">
                       <input type="checkbox" value="" class="hiking_check" id="hiking_check" checked="checked">
@@ -164,6 +202,12 @@
                         Reviews
                       </label>
                     </div>
+                    <div class="form-check checkbox-rounded">
+                      <input type="checkbox" value="" class="poi_check" id="poi_check" checked="checked">
+                      <label class="form-check-label" for="poi_check">
+                        Points of Interest
+                      </label>
+                    </div>
                   </div>
                 </div>
             </div>
@@ -178,12 +222,13 @@
         <div class="col">
             <div class="collapse" id="card-collapse">
                 <div id="card">
-                  <div id="legend-text">Legend:</div>
+                  <h4>Legend:</h4>
                   <div id="legend">
                     <div id="thmb">
                       <img id="thumbnails" height="35px" width="35px" src="img/boundary.PNG">Park Boundary</br>
                       <img id="thumbnails" height="35px" width="35px" src="img/review.PNG">Reviews</br>
                       <img id="thumbnails" height="35px" width="35px" src="img/historical.PNG">Historical Places</br>
+                      <img id="thumbnails" height="35px" width="35px" src="img/poi.PNG">Points of Interest</br>
                       <img id="thumbnails" height="35px" width="35px" src="img/hike.PNG">Hiking Trails</br>
                       <img id="thumbnails" height="35px" width="35px" src="img/mnt.PNG">Mountain Bike Trails</br>
                       <img id="thumbnails" height="35px" width="35px" src="img/ski.PNG">Ski Trails
@@ -203,6 +248,7 @@
                 <div id="card">
                   <div id="form-tab">
                     <form>
+                      <h4>Leave a Review:</h4>
                       <label for="date">Date:</label><br>
                       <input type="date" id="date" name="date"><br>
                       <label for="comments">Comments:</label><br>
@@ -220,10 +266,10 @@
                       <label for="issues">Report an issue:</label><br>
                       <input type="text" id="issues" name="issues">
                       <label for="location">Location:<br></label><br>
-                      <input type="button" value="Use Current Location" id="loc">
-                      <input type="button" value="Use Map" id="map-finder">
+                      <input type="button" class="button" value="Use Current Location" id="loc">
+                      <input type="button" class="button" value="Use Map" id="map-finder">
                       <input type="text" id="location" name="location">
-                      <input type="button" value="Submit" id="submit">
+                      <input type="button" class="button" value="Submit" id="submit">
                     </form>
                   </div>
                 </div>

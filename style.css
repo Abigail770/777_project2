@@ -8,6 +8,10 @@
     z-index: -1;
 }
 
+h4{
+    font-weight: bold;
+}
+
 .blue {
     background-color: #55211b;
     color: white;
@@ -35,7 +39,7 @@
 }
 
 #selectHistoricalDrop {
-    background-color: #d2eaef;
+    background-color: hsl(120, 30%, 75%);
     width: 95%;
     padding: 10px;
     margin-bottom:5px;
@@ -43,33 +47,63 @@
 }
 
 #selectHikingDrop {
-    background-color: #d2eaef;
+    background-color: hsl(120, 30%, 75%);
     width: 95%;
     padding: 10px;
     margin-bottom:5px;
 
 }
 #selectMtnDrop {
-    background-color: #d2eaef;
+    background-color: hsl(120, 30%, 75%);
     width: 95%;
     padding: 10px;
     margin-bottom:5px;
 
 }
 #selectSkiDrop {
-    background-color: #d2eaef;
+    background-color: hsl(120, 30%, 75%);
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+#selectPoiDrop {
+    background-color: hsl(120, 30%, 75%);
     width: 95%;
     padding: 10px;
     margin-bottom: 5px;
 }
 #lengthDrop {
-    background-color: #d2eaef;
+    background-color: hsl(120, 30%, 75%);
     width: 95%;
     padding: 10px;
     margin-bottom: 5px;
 }
 #difficultyDrop {
-    background-color: #d2eaef;
+    background-color: hsl(120, 30%, 75%);
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+#bikeLengthDrop {
+    background-color: hsl(120, 30%, 75%);
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+#bikeDifficultyDrop {
+    background-color: hsl(120, 30%, 75%);
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+#skiLengthDrop {
+    background-color: hsl(120, 30%, 75%);
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+#skiDifficultyDrop {
+    background-color: hsl(120, 30%, 75%);
     width: 95%;
     padding: 10px;
     margin-bottom: 5px;
@@ -82,22 +116,25 @@
 }
 
 #legend{
-    background-color: #d2eaef;
+    background-color: hsl(120, 30%, 75%);
     width: 80%;
     padding: 15px;
     margin: auto;
     color: black;
-    height: 260px;
+    height: 300px;
     border-radius: 10px;
     text-align:left;
 }
 #rating{
-    background-color: #d2eaef;
+    background-color: hsl(120, 30%, 75%);
     width: 50%;
     padding: 10px;
     margin: 10px;
 }
 #legend-text{
+    padding: 10px;
+}
+#review-text{
     padding: 10px;
 }
 
@@ -111,7 +148,7 @@
 }
 input[type=text]{
     margin: 10px;
-    background-color: lightcyan;
+    background-color: hsl(120, 30%, 75%);
 } 
 #park-info{
     border: 2px solid #ccc;
@@ -173,6 +210,18 @@ input[type=text]{
     font-size: 16px;
     margin-top: 10px;
 }
+#filter-button{
+    border: 2px solid #ccc;
+    background-color: white;
+    border-radius: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 5px;
+    color: #000000;
+    font-family: "Open Sans";
+    font-size: 16px;
+    margin-top: 10px;
+}
 #card-collapse{
     border: 2px solid #ccc;
     background-color: white;
@@ -182,8 +231,8 @@ input[type=text]{
     font-family: "Open Sans";
     font-size: 16px;
     width: 300px;
-    max-height:350px;
-    overflow-y: scroll;
+    max-height:300px;
+    overflow-y: auto;
 }
 #info-collapse{
     border: 2px solid #ccc;
@@ -207,6 +256,18 @@ input[type=text]{
     font-size: 16px;
     width: 275px;
 }
+#filter-collapse{
+    border: 2px solid #ccc;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    color: #000000;
+    font-family: "Open Sans";
+    font-size: 16px;
+    width: 275px;
+    max-height: 300px;
+    overflow-y: scroll;
+}
 #toggle-collapse{
     border: 2px solid #ccc;
     background-color: white;
@@ -226,6 +287,25 @@ input[type=text]{
     font-family: "Open Sans";
     font-size: 16px;
     width: 250px;
-    max-height: 350px;
+    max-height: 300px;
     overflow-y: scroll;
 }
+  
+.button:hover {
+background-color: #aed3ae; /* Green */
+color: white;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    transition-duration: 0.4s;
+    margin: 5px;
+}
+
