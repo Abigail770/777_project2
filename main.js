@@ -276,6 +276,7 @@ $('#loc').click(getLocation);
 $('#map-finder').click(findOnMap);
 
 function findOnMap(){
+    alert("Click a location on the map")
     map.on('click', function(e) {
         alert("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
         lat=e.latlng.lat;
