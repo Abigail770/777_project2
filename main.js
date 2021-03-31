@@ -575,7 +575,7 @@ document.getElementById('lengthDrop').addEventListener("change", function (e) {
     var layerSource = hikingSource;
     var layerBufferSource = hikingBufferSource;
     lengthFunction(input, filterType, layerSource, layerBufferSource);
-    $('.collapse').collapse('hide');
+    // $('.collapse').collapse('hide');
 });
 
 // when select option from downdown menu, change filter
@@ -585,7 +585,7 @@ document.getElementById('difficultyDrop').addEventListener("change", function (e
     var layerSource = hikingSource;
     var layerBufferSource = hikingBufferSource;
     difficultyFunction(input, filterType, layerSource, layerBufferSource);
-    $('.collapse').collapse('hide');
+    // $('.collapse').collapse('hide');
 });
 
 // when select option from downdown menu, change filter
@@ -595,7 +595,7 @@ document.getElementById('bikeLengthDrop').addEventListener("change", function (e
     var layerSource = bikeSource;
     var layerBufferSource = bikeBufferSource;
     lengthFunction(input, filterType, layerSource, layerBufferSource);
-    $('.collapse').collapse('hide');
+    // $('.collapse').collapse('hide');
 });
 
 // when select option from downdown menu, change filter
@@ -605,7 +605,7 @@ document.getElementById('bikeDifficultyDrop').addEventListener("change", functio
     var layerSource = bikeSource;
     var layerBufferSource = bikeBufferSource;
     difficultyFunction(input, filterType, layerSource, layerBufferSource);
-    $('.collapse').collapse('hide');
+    // $('.collapse').collapse('hide');
 });
 
 // when select option from downdown menu, change filter
@@ -615,7 +615,7 @@ document.getElementById('skiLengthDrop').addEventListener("change", function (e)
     var layerSource = xcSource;
     var layerBufferSource = xcBufferSource;
     lengthFunction(input, filterType, layerSource, layerBufferSource);
-    $('.collapse').collapse('hide');
+    // $('.collapse').collapse('hide');
 });
 
 // when select option from downdown menu, change filter
@@ -625,7 +625,7 @@ document.getElementById('skiDifficultyDrop').addEventListener("change", function
     var layerSource = xcSource;
     var layerBufferSource = xcBufferSource;
     difficultyFunction(input, filterType, layerSource, layerBufferSource);
-    $('.collapse').collapse('hide');
+    // $('.collapse').collapse('hide');
 });
 
 function difficultyFunction(input, filterType, layerSource, layerBufferSource){
