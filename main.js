@@ -1,17 +1,21 @@
+// Collapse cards when another button is clicked.
 $('.btn.btn-primary').click( function(e) {
     $('.collapse').collapse('hide');
     // $("select").each(function() { this.selectedIndex = 0 });
 });
 
+// Carto API key
 const client = new carto.Client({
     apiKey: '5u-RGrhxG21jti2xJQUAfA',
     username: 'amgleason2'
   });
 
+// Global variables
 var lengthQuery = 'All';
 var difficultyQuery = 'All';
 var filterInfo = "";
 
+// Park boundary layer
 const boundarySource = new carto.source.SQL('SELECT * from park_boundary');
 const boundaryStyle = new carto.style.CartoCSS(`
 #layer {
@@ -23,6 +27,7 @@ const boundaryStyle = new carto.style.CartoCSS(`
 
 const boundaryLayer = new carto.layer.Layer(boundarySource, boundaryStyle);
 
+// Hiking trail layer
 const hikingSource = new carto.source.SQL('SELECT * from hikingtr_dissolve');
 const hikingStyle = new carto.style.CartoCSS(`
 #layer {
@@ -35,6 +40,7 @@ const hikingLayer = new carto.layer.Layer(hikingSource, hikingStyle, {
     featureClickColumns: ['name', 'length', 'difficulty']
 });
 
+// Ski trail layer
 const xcSource = new carto.source.SQL('SELECT * from xctr_dissolve');
 const xcStyle = new carto.style.CartoCSS(`
 #layer {
@@ -46,6 +52,7 @@ const xcLayer = new carto.layer.Layer(xcSource, xcStyle, {
     featureClickColumns: ['name']
 });
 
+// Bike trail layer
 const bikeSource = new carto.source.SQL('SELECT * from mtntr_dissolve');
 const bikeStyle = new carto.style.CartoCSS(`
 #layer {
@@ -57,6 +64,7 @@ const bikeLayer = new carto.layer.Layer(bikeSource, bikeStyle, {
     featureClickColumns: ['name']
 });
 
+// Hiking trail invisible buffer layer
 const hikingBufferSource = new carto.source.SQL('SELECT * from hikingtr_dissolve');
 const hikingBufferStyle = new carto.style.CartoCSS(`
 #layer {
@@ -68,6 +76,7 @@ const hikingBufferLayer = new carto.layer.Layer(hikingBufferSource, hikingBuffer
     featureClickColumns: ['name', 'length', 'difficulty']
 });
 
+// Display popups on feature click
 hikingBufferLayer.on('featureClicked', featureEvent => {
     var content = `<h6>Hiking Trail</h6>
     <strong>Name: </strong>${featureEvent.data.name}<br>
@@ -80,6 +89,7 @@ hikingBufferLayer.on('featureClicked', featureEvent => {
         .openOn(map);
 });
 
+// Ski trail invisible buffer layer
 const xcBufferSource = new carto.source.SQL('SELECT * from xctr_dissolve');
 const xcBufferStyle = new carto.style.CartoCSS(`
 #layer {
@@ -91,6 +101,7 @@ const xcBufferLayer = new carto.layer.Layer(xcBufferSource, xcBufferStyle, {
     featureClickColumns: ['name', 'length', 'difficulty']
 });
 
+// Display popups on feature click
 xcBufferLayer.on('featureClicked', featureEvent => {
     var content = `<h6>Ski Trail</h6>
     <strong>Name: </strong>${featureEvent.data.name}<br>
@@ -103,6 +114,7 @@ xcBufferLayer.on('featureClicked', featureEvent => {
         .openOn(map);
 });
 
+// Bike trail invisible buffer layer
 const bikeBufferSource = new carto.source.SQL('SELECT * from mtntr_dissolve');
 const bikeBufferStyle = new carto.style.CartoCSS(`
 #layer {
@@ -114,6 +126,7 @@ const bikeBufferLayer = new carto.layer.Layer(bikeBufferSource, bikeBufferStyle,
     featureClickColumns: ['name', 'length', 'difficulty']
 });
 
+// Display popups on feature click
 bikeBufferLayer.on('featureClicked', featureEvent => {
     var content = `<h6>Bike Trail</h6>
     <strong>Name: </strong>${featureEvent.data.name}<br>
@@ -127,6 +140,7 @@ bikeBufferLayer.on('featureClicked', featureEvent => {
         .openOn(map);
 });
 
+// Historic points layer
 const historicSource = new carto.source.SQL('SELECT * from historicplaces_devilslake');
 const historicStyle = new carto.style.CartoCSS(`
 #layer {
@@ -147,6 +161,7 @@ const historicLayer = new carto.layer.Layer(historicSource, historicStyle, {
     featureClickColumns: ['name', "description", "the_geom"]
 });
 
+// Reviews layer
 const reviewSource = new carto.source.SQL('SELECT * from reviews');
 const reviewStyle = new carto.style.CartoCSS(`
 #layer {
@@ -171,6 +186,7 @@ const reviewLayer = new carto.layer.Layer(reviewSource, reviewStyle, {
     featureClickColumns: ['date', "comments", "rating", "issue"]
 });
 
+// Historic points invisible buffer layer
 const historicBufferSource = new carto.source.SQL('SELECT * from historicplaces_devilslake');
 const historicBufferStyle = new carto.style.CartoCSS(`
 #layer {
@@ -182,7 +198,7 @@ const historicBufferLayer = new carto.layer.Layer(historicBufferSource, historic
     featureClickColumns: ['name', "description", "the_geom"]
 });
 
-
+// Display popups on feature click
 historicBufferLayer.on('featureClicked', featureEvent => {
     if (featureEvent.data.description){
         var content = `
@@ -198,6 +214,7 @@ historicBufferLayer.on('featureClicked', featureEvent => {
         .openOn(map);
 });
 
+// Invisible buffer layer for reviews
 const reviewBufferSource = new carto.source.SQL('SELECT * from reviews');
 const reviewBufferStyle = new carto.style.CartoCSS(`
 #layer {
@@ -209,7 +226,7 @@ const reviewBufferLayer = new carto.layer.Layer(reviewBufferSource, reviewBuffer
     featureClickColumns: ['date', "comments", "rating", "issue"]
 });
 
-
+// Display popups on feature click
 reviewBufferLayer.on('featureClicked', featureEvent => {
     const content = `
       <strong> Date: </strong> ${featureEvent.data.date}<br>
@@ -226,6 +243,7 @@ reviewBufferLayer.on('featureClicked', featureEvent => {
     // document.getElementById('info').innerHTML = content;
 });
 
+// Points of interest layer
 const poiSource = new carto.source.SQL('SELECT * from pointsofinterest');
 const poiStyle = new carto.style.CartoCSS(`
 #layer {
@@ -247,6 +265,7 @@ const poiLayer = new carto.layer.Layer(poiSource, poiStyle, {
     featureClickColumns: ['name']
 });
 
+// Points of interest invisible buffer layer
 const poiBufferSource = new carto.source.SQL('SELECT * from pointsofinterest');
 const poiBufferStyle = new carto.style.CartoCSS(`
 #layer {
@@ -259,7 +278,7 @@ const poiBufferLayer = new carto.layer.Layer(poiBufferSource, poiBufferStyle, {
     featureClickColumns: ['name']
 });
 
-
+// Display popups on feature click
 poiBufferLayer.on('featureClicked', featureEvent => {
     const content = `${featureEvent.data.name}<br>`;
 
@@ -269,12 +288,15 @@ poiBufferLayer.on('featureClicked', featureEvent => {
         .openOn(map);
 });
 
+// Global variables for form
 var lat;
 var lon;
 
+// Buttons to get locations in form.
 $('#loc').click(getLocation);
 $('#map-finder').click(findOnMap);
 
+// "Use Map" function in form to get lat lon on map click
 function findOnMap(){
     alert("Click a location on the map")
     map.on('click', function(e) {
@@ -287,6 +309,7 @@ function findOnMap(){
     return;
 }
 
+// Get user location for form
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
@@ -295,19 +318,22 @@ function getLocation() {
     }
 }
 
+// Get user's lat lon coordinates and populate text entry field in form
 function showPosition(position) {
     lat= position.coords.latitude;
     lon= position.coords.longitude;
     $('#location').val(lat + "," + lon);
 }
 
-
+// Form submittal
 $('#submit').click(function(){
+    // Assign user submission to variables
     var date = $('#date').val();
     var comments = $('#comments').val();
     var rating = $('#rating').val();
     var issue = $('#issues').val();
 
+    // Format lat lon
     if(lat == null && lon == null){
         lat_lon = $('#location').val()
         if (lat_lon !== null && typeof lat_lon !== undefined && lat_lon !== ""){
@@ -316,10 +342,12 @@ $('#submit').click(function(){
         }
     }
 
+    // Form validation
    if(!isNaN(rating) && rating !==null && typeof rating !== undefined && rating !== ""){
        if (lat != null && lon !== null && !isNaN(lat) && !isNaN(lon) && typeof lat !== undefined && typeof lon !== undefined && lat !== "" && lon != ""){
             if (comments !== null && typeof comments !== undefined && comments !== ""){
                 if (date !== null && typeof date !== undefined && date !== ""){
+                        // Insert entry into database if validation is successful
                         $.getJSON(`https://amgleason2.carto.com/api/v2/sql?q=INSERT INTO reviews (the_geom, date, comments, lat, lon, rating, issue) VALUES (ST_SetSRID(ST_Point('` + lon + `', '` + lat + `'),4326), '` + date + `', '` + comments + `', '` + lat + `', '` + lon + `', '` + rating + `', '` + issue + `')&api_key=5u-RGrhxG21jti2xJQUAfA`, function(data) {
                         })
                         alert("Thanks for submitting a review!");
@@ -338,15 +366,18 @@ $('#submit').click(function(){
     }
 });
 
+// Create leaflet map
 var map = L.map('map',{
     maxZoom: 18,
     zoomControl: false,
     // layers: [USGS_USTopo],
 }).setView([43.42, -89.69], 14)
 
+// Create panes for each basemap
 map.createPane("backgroundPane").style.zIndex = 100;
 map.createPane("foregroundPane").style.zIndex = 200;
 
+// USGS topographic imagery basemap
 var USGS_USImageryTopo = L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}', {
 	maxZoom: 20,
     pane:'backgroundPane',
@@ -358,27 +389,32 @@ var USGS_USImageryTopo = L.tileLayer('https://basemap.nationalmap.gov/arcgis/res
 // 	attribution: 'Tiles courtesy of the <a href="https://usgs.gov/">U.S. Geological Survey</a>'
 // });
 
+// USGS Topo basemap (default)
 var USGS_USTopo = L.esri.basemapLayer('Topographic',{
     pane:'backgroundPane',
 }).addTo(map);
 
+// Basemap objects
 var baseMaps = {
     "USGS Topo": USGS_USTopo,
     "USGS Imagery": USGS_USImageryTopo
 };
 
+// Add default basemap
 map.addLayer(USGS_USTopo);
 
+// Set map and sidebar positions to avoid overlap with navbar
 $('#map').css('top', $('#navbar').outerHeight());
 $('#map').css('left', "50px");
 $('#sidebar').css('top', $('#navbar').outerHeight());
 
-// Add Leaflet controls to map
+// Add Leaflet controls for basemaps, geolocation and zoom home to map
 L.control.layers(baseMaps).addTo(map);
 L.control.locate().addTo(map);
 var zoomHome = L.Control.zoomHome();
 zoomHome.addTo(map);
 
+// Populate dropdowns for search and filter
 populateHistoricalDropDown();
 populateHikingDropDown();
 populateMtnDropDown();
@@ -387,7 +423,7 @@ populateLengthDropdown();
 populateDifficultyDropdown();
 populatePoiDropdown();
 
-// Populate dropdown
+// Populate historical feature dropdown
 function populateHistoricalDropDown(){
     return fetch(
         `https://amgleason2.carto.com/api/v2/sql?format=geoJSON&q=SELECT the_geom, name FROM historicplaces_devilslake ORDER BY name ASC`
@@ -404,6 +440,7 @@ function populateHistoricalDropDown(){
         })
 }
 
+// Populate hiking trail dropdown
 function populateHikingDropDown(){
     return fetch(
         `https://amgleason2.carto.com/api/v2/sql?format=geoJSON&q=SELECT the_geom, name FROM hikingtr_dissolve ORDER BY name ASC`
@@ -420,6 +457,7 @@ function populateHikingDropDown(){
         })
 }
 
+// Populate bike trail dropdown
 function populateMtnDropDown(){
     return fetch(
         `https://amgleason2.carto.com/api/v2/sql?format=geoJSON&q=SELECT the_geom, name FROM mtntr_dissolve ORDER BY name ASC`
@@ -436,6 +474,7 @@ function populateMtnDropDown(){
         })
 }
 
+// Populate ski trail dropdown
 function populateSkiDropDown(){
     return fetch(
         `https://amgleason2.carto.com/api/v2/sql?format=geoJSON&q=SELECT the_geom, name FROM xctr_dissolve ORDER BY name ASC`
@@ -452,6 +491,7 @@ function populateSkiDropDown(){
         })
 }
 
+// Populate points of interest dropdown
 function populatePoiDropdown(){
     return fetch(
         `https://amgleason2.carto.com/api/v2/sql?format=geoJSON&q=SELECT the_geom, name FROM pointsofinterest ORDER BY name ASC`
@@ -468,6 +508,7 @@ function populatePoiDropdown(){
         })
 }
 
+// Populate trail length dropdowns
 function populateLengthDropdown(){
     var lengths = ['All', 'Short (under 2 miles)', 'Medium (2-5 miles)', 'Long (over 5 miles)'];
     let uniqueLengths = [...new Set(lengths)];
@@ -491,6 +532,7 @@ function populateLengthDropdown(){
     });
 }
 
+// Populate difficult dropdowns
 function populateDifficultyDropdown(){
     var difficulties = ['All', 'Easy', 'Moderate', 'Difficult'];
     let uniquedifficulties = [...new Set(difficulties)];
@@ -629,6 +671,7 @@ document.getElementById('skiDifficultyDrop').addEventListener("change", function
     // $('.collapse').collapse('hide');
 });
 
+// Change filter when difficulty dropdown is changed
 function difficultyFunction(input, filterType, layerSource, layerBufferSource){
     if (lengthQuery == 'All'){
         if (input == 'All'){
@@ -666,6 +709,7 @@ function difficultyFunction(input, filterType, layerSource, layerBufferSource){
     difficultyQuery = input;
 }
 
+// Change filter when length function is changed
 function lengthFunction(input, filterType, layerSource, layerBufferSource){
     if (difficultyQuery == 'All'){
         if (input == 'All'){
@@ -727,6 +771,7 @@ function lengthFunction(input, filterType, layerSource, layerBufferSource){
     lengthQuery = input;
 }
 
+// Add all layers to map
 client.addLayer(boundaryLayer);
 client.addLayer(hikingBufferLayer);
 client.addLayer(xcBufferLayer);
@@ -742,6 +787,7 @@ client.addLayer(poiLayer);
 client.addLayer(poiBufferLayer);
 client.getLeafletLayer().addTo(map);
 
+// Clear hiking filters
 $('#hiking-clear').click( function() {
     hikingSource.setQuery(`SELECT * FROM hikingtr_dissolve`);
     hikingBufferSource.setQuery(`SELECT * FROM hikingtr_dissolve`);
@@ -751,6 +797,7 @@ $('#hiking-clear').click( function() {
         this.selectedIndex = 0
     });
 });
+// Clear bike filters
 $('#biking-clear').click( function() {
     bikeSource.setQuery(`SELECT * FROM mtntr_dissolve`);
     bikeBufferSource.setQuery(`SELECT * FROM mtntr_dissolve`);
@@ -760,6 +807,7 @@ $('#biking-clear').click( function() {
         this.selectedIndex = 0
     });
 });
+// Clear ski filters
 $('#skiing-clear').click( function() {
     xcSource.setQuery(`SELECT * FROM xctr_dissolve`);
     xcBufferSource.setQuery(`SELECT * FROM xctr_dissolve`);
@@ -770,6 +818,7 @@ $('#skiing-clear').click( function() {
     });
 });
 
+// Layer toggle listeners
 $('.hiking_check').change(function(){
     changeLayer("hikingLayer");
 });
@@ -789,6 +838,7 @@ $('.poi_check').change(function(){
     changeLayer("poiLayer");
 });
 
+// Layer toggle
 function changeLayer(layerToChange){
 
 if (layerToChange == "hikingLayer"){
